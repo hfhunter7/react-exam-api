@@ -12,7 +12,7 @@ class ChoiceNew extends Component {
         props.question_id = this.props.params.questionId;
         this.props.createChoice(props)
             .then(() => {
-                this.context.router.push('/');
+                this.context.router.push('/question/' + props.question_id);
             });
     }
 
@@ -41,8 +41,8 @@ class ChoiceNew extends Component {
                     <div className={`form-group`}>
                         <label>Correct</label>
                         <select className="form-control" {...correct}>
-                            <option value="true">True</option>
                             <option value="false">False</option>
+                            <option value="true">True</option>
                         </select>
                     </div>
 

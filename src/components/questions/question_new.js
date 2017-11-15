@@ -12,7 +12,7 @@ class QuestionNew extends Component {
         props.exam_id = this.props.params.examId;
         this.props.createQuestion(props)
             .then(() => {
-                this.context.router.push('/');
+                this.context.router.push('/exam/' + props.exam_id);
             });
     }
 
