@@ -7,6 +7,8 @@ import ExamNew from "./components/exams/exam_new";
 import ExamShow from "./components/exams/exam_show";
 import QuestionNew from "./components/questions/question_new";
 import QuestionShow from "./components/questions/question_show";
+import ChoiceNew from "./components/choices/choice_new";
+import ChoiceShow from "./components/choices/choice_show";
 
 export default (
     <Route path="/" component={App} >
@@ -15,5 +17,7 @@ export default (
         <Route path="/exam/:id" component={ExamShow}/>
         <Route path="/question/new/:examId" component={QuestionNew}/>
         <Route path="/question/:id" component={QuestionShow}/>
+        <Route path="/choice/new/:questionId" component={ChoiceNew}/>
+        <Route path="/choice/:id" component={ChoiceShow}/>
     </Route>
 );

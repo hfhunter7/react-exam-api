@@ -17,7 +17,7 @@ export function fetchQuestions(){
 }
 
 export function fetchQuestion(id){
-    const request = axios.get(`${ROOT_URL}${id}`);
+    const request = axios.get(`${ROOT_URL}/${id}`);
 
     return {
         type: FETCH_QUESTION,

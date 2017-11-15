@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { fetchQuestion , deleteQuestion} from "../../actions/QuestionAction";
 import { connect } from "react-redux";
+import { Link } from "react-router";
+import ChoiceList from "../choices/choice_list";
 
 class QuestionShow extends Component {
     static contextTypes = {
@@ -24,14 +26,17 @@ class QuestionShow extends Component {
         if(!this.props.question){
             return <div>Loading...</div>;
         }
+
         return (
             <div>
+                <Link to="/" className="btn btn-primary">Back to Index</Link>
                 <button onClick={this.onDeleteClick.bind(this)} className="btn btn-danger pull-xs-right">Delete Question</button>
-                <h3>Question {this.props.params.id}</h3>
                 <hr width={"100%"} />
                 <h4>Exam ID : {question.exam_id}</h4>
                 <h4>Question ID : {question.id}</h4>
                 <h4>HTML : {question.html}</h4>
+                <hr width="100%"/>
+                <ChoiceList questionId={question.id}/>
             </div>
         );
     }

@@ -13,8 +13,8 @@ class ExamIndex extends Component {
             return (
                 <li className="list-group-item" key={exam.id}>
                     <Link to={"exam/" + exam.id}>
-                        <span className="pull-xs-right">{exam.description}</span>
-                        <strong>{exam.title}</strong>
+                        <span className="pull-xs-right">{exam.title}</span>
+                        <strong>Exam ID : {exam.id}</strong>
                     </Link>
                 </li>
             );
